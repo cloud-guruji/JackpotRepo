@@ -1,0 +1,8 @@
+ec2-user
+sudo su 
+yum update -y
+yum install git -y
+git --version
+git config --global user.name "Mahesh"
+git config --global user.email "abhangmahesh1111@gmail.com
+git config --list
