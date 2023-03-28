@@ -1,0 +1,79 @@
+git init 
+This command is used start a new repository.
+EX. git init [repository name]
+
+git clone 
+This command is used to obtain a repository from an existing URL.[Github repo/Azure Devops repo /Gitlab repo]
+EX. git clone [repository url]
+
+git add
+This command is used to add a file to the staging area.
+EX. git add [file name]
+
+git add .
+This command is used to add all file to the staging area.
+EX. git add .
+
+
+git add *
+This command is used to add one or more file to the staging area.
+EX. git add *
+
+git add -A
+This command is used to add all untracked file to the staging area.
+EX. git add -A
+
+git status
+This command is used check the status of file 
+This command show all the modified files which are not commited.
+EX. git status
+
+git diff 
+This command is used to see differences which are not yet staged.
+EX. git diff
+
+git branch 
+This command show all branches of repo.
+EX.git branch
+
+git branch [branch name]
+This command is used to create a new branch.
+EX. git branch demobranch1
+
+git branch -d [branch name]
+This command is used to Delete the branch.
+EX. git branch -d Demobranch1
+
+git checkout  [branch name]
+This command is used to switch between branches/ switch one branch to another branch.
+EX. git checkout [Demobranch2]
+
+git checkout -b [branch name]
+This command is used to create a new branch and switch to that.
+EX. git checkout -b Demobranch3
+
+git push
+This command is used to send all committed to your repo.
+EX.git push or git push origin master
+
+git pull 
+This command is used to fetch and merge changes from the remote repo.
+EX.git pull
+
+git merge [branch name]
+This command is used to merge specific branch history into the main/master branch.
+EX. git merge Demobranch1
+
+git stash 
+This command is used to temporarily stores all file 
+EX.git stash save
+
+git log 
+This command is used to read a history of repo. to see all of your commit.
+EX.git log
+
+git revert 
+This command is used to apply revert operation.
+EX.git revert
+
+
