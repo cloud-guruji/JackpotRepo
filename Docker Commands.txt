@@ -1,0 +1,189 @@
+To install Docker on Linux-
+yum install docker -y
+
+To remove docker on linux-
+yum remove docker -y 
+
+To install Docker on Ubuntu-
+sudo apt-get install docker.io
+
+
+To remove Docker on Ubuntu-
+sudo apt-get remove docker.io
+
+To check Docker service status-
+service docker status
+
+To start Docker service-
+service docker start
+
+To see all Docker Images in your Hostvm [linux/ubuntu] -
+docker images 
+docker image ls
+
+To list all Docker image
+docker images -a
+
+To find out images in Dockerhub-
+docker search [image name]
+Ex.docker search nginx/ubuntu/jenkins
+
+To download image from dockerhub to local machine-
+docker pull [image name]
+Ex.docker pull nginx/ubuntu
+
+To delete docker images-
+docker rmi [image name]
+Ex.docker rmi nginx/ubuntu
+
+To delete all images-
+docker rmi -f $(docker images -q)
+
+To give name to container (Create+Start) -
+docker run -it  --name [container name] [image name] /bin/bash
+EX. docker run -it  --name DemoContainer ubuntu /bin/bash
+
+To create Container Without Name-
+docker run -it [image name] /bin/bash
+EX. docker run -it ubuntu /bin/bash
+
+To start Container-
+docker start [container Name / ID]
+EX. docker start DemoContainer
+
+To go inside of Container-
+docker attach [container Name / ID]
+EX. docker attach DemoContainer
+
+To stop Container-
+docker stop [container Name / ID]
+EX. docker stop DemoContainer
+or exit command also used
+
+To delete Container-
+docker rm -rf [container Name / ID]
+EX. docker rm -rf DemoContainer
+
+To restart Container-
+docker restart [container Name / ID]
+EX. docker restart DemoContainer
+
+To Delete all Container-
+docker rm -f $(docker ps -aq)
+
+To stop all running Container-
+docker stop $(docker ps -a -q)
+
+To see running Container -
+docker ps
+
+To see all running or stop Container -
+docker ps -a
+
+To list the all changed file and directory in Container-
+docker diff [container Name / ID]
+EX. docker diff DemoContainer
+
+To create image from Container-
+docker commit [container Name / ID] [Image Name]
+EX. docker commit DemoContainer myimage 
+
+To create image from Dockerfile-
+docker biuld -t  [Image Name]
+EX.docker build -t Demoimg
+
+To create volume -
+docker run -it --name [Container name] -v/volume [image name] /bin/bash
+EX.docker run -it --name DemoC1  -v/volume1 ubuntu /bin/bash 
+
+To share volume one Container to another Container-
+docker run -it --name [New Container Name] --privileged=true --volumes-from [old Container Name] [image name] /bin/bash
+EX. docker run -it --name DemoC2 --privileged=true --volumes-from DemoC1 ubuntu /bin/bash
+
+To share storage on a Host system with docker container
+
+EX.
+
+To find Container mounted volume path/network IP-
+docker inspect [container name /ID]
+EX. docker inspect DemoC1
+    docker inspect DemoC2
+
+To map Host Port to a Container-(new container with port)
+docker run -td --name [Container Name] -p80:80 ubuntu
+EX. docker run -td --name Democ1 -p80:80 ubuntu
+
+To inter in Container after map a port -
+docker exec -it [container name] /bin/bash
+EX. docker exec -it Democ1 /bin/bash
+
+To check Container port -
+docker port [container name /ID]
+EX. docker port Democ1
+
+To crete custom network -
+docker network create [Network Name]
+EX. docker network create DemoNet
+
+To check network list-
+docker network ls
+
+To add Container in custom network -
+docker network connect [Network Name] [container name /ID]
+EX.docker network connect DemoNet Democ1
+
+To create container with network -
+docker -d -p --name=[container name] --net [Network Name] [image name]
+EX. docker -d -p --name=Democ1 --net Demonet ubuntu
+    docker -d -p --name=Democ2 --net Demonet centos
+
+To ping one Container to another Container-
+docker exec [container name/ID] ping [IP address]
+docker exec [container name/ID] ping [container name/ID]
+EX.docker exec Democ1 ping Democ2
+   docker exec Democ1 ping 192.168.72.0
+
+
+To log in Docker / To connect to dockerhub-
+docker login 
+used dockerhub username and password
+
+To give tag to your image-
+docker tag [old image] [Dockerhub ID/New image Name]
+EX.docker tag Demoimg  Cloud Guruji/newimg
+
+To push image in Dockerhub
+docker push [Dockerhub ID/New image Name]
+EX. docker push Cloud Guruji/newimg
+
+To link one container to another container [Ping] -
+docker run -it --name [new container name] --link [oldcontainer name] : [link name] [image name]
+EX.docker run -it --name C3 --link c1:Demolink ubuntu
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
