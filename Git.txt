@@ -23,6 +23,12 @@ git add -A
 This command is used to add all untracked file to the staging area.
 EX. git add -A
 
+
+git commit -m
+This command used to add commit and message.
+EX.git commit -m "This is first commit for this issue"
+
+
 git status
 This command is used check the status of file 
 This command show all the modified files which are not commited.
