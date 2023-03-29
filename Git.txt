@@ -1,3 +1,11 @@
+git config --global user.name
+This command used to config/set user name in git.
+EX. git config --global user.name cloud guruji
+
+git config --global user.email
+This command used to config/set email ID in git.
+EX. git config --global user.email cloudguruji1010@gmail.com
+
 git init 
 This command is used start a new repository.
 EX. git init [repository name]
@@ -14,7 +22,6 @@ git add .
 This command is used to add all file to the staging area.
 EX. git add .
 
-
 git add *
 This command is used to add one or more file to the staging area.
 EX. git add *
@@ -23,11 +30,9 @@ git add -A
 This command is used to add all untracked file to the staging area.
 EX. git add -A
 
-
 git commit -m
 This command used to add commit and message.
 EX.git commit -m "This is first commit for this issue"
-
 
 git status
 This command is used check the status of file 
